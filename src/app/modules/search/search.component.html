@@ -1,0 +1,12 @@
+<form #ingredientsForm="ngForm" (ngSubmit)="submit(ingredientsForm.value)">
+    <div class="mb-3">
+        <label for="ingredients" class="form-label">Ingredients list</label>
+        <textarea required ngModel #ingredients="ngModel" name="ingredients" id="ingredients" rows="3" class="form-control"></textarea>
+        <p class="text-danger mt-2" *ngIf="ingredients.touched && !ingredients.valid">
+            ingredients is required
+        </p>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit" [class.disabled]="!ingredientsForm.valid">Submit</button>
+    </div>
+</form>

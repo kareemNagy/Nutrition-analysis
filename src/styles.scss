@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+
+app-search {
+    min-height: 72.6vh;
+    display: block;
+}
+
+.circle-pres {
+    width: 100px;
+    height: 100px;
+    border: 10px solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.pro-clr {
+        border-color: #6acc00;
+    }
+    &.car-clr {
+        border-color: #ffbe61;
+    }
+    &.fat-clr {
+        border-color: #f14647;
+    }
+}
+
+textarea.form-control {
+    height: 250px;
+}
+
+.totalCalories-circle {
+    text-align: center;
+    margin-bottom: 20px;
+    svg {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+    }
+    circle {
+        fill: transparent;
+    }
+    .text {
+        font-family: Roboto, sans-serif;
+        fill: #000;
+        font-size: 3px;
+        text-align: left;
+        .text-1 {
+            font-size: 9px;
+        }
+    }
+}
+
+.progress-bar {
+    padding: 0 5px;
+}
+
+.accordion-body {
+    text-transform: lowercase;
+}
