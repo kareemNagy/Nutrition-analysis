@@ -15,13 +15,17 @@ export class SearchComponent implements OnInit {
   }
 
   submit(form) {
-    this.ApiService.getRecipeData(form.ingredients)
-      .subscribe((data) => {
-        localStorage.setItem('nutritionDetails', JSON.stringify(data))
-        this.router.navigate(['nutrition-details'], { queryParams: { userSearch: form.ingredients } });
-        error => console.log('error occurred', error);
-      })
+    this.ApiService.getPost({ "ingr": form.ingredients.split(/\n|\r/) })
+      .subscribe(
+        response => {
+          this.ApiService.dataRes = response;
+          this.router.navigate(['nutrition-details'], { queryParams: { userSearch: form.ingredients } });
+        },
+        error => {
+          this.router.navigate(['error-page']);
+          console.log(error);
+        });
   }
 
-
 }
+

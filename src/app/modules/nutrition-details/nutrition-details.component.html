@@ -5,6 +5,33 @@
     <div class="row">
         <div class="col-md-4">
             <div class="">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Qty</th>
+                            <th>Unit</th>
+                            <th>Food</th>
+                            <th>Calories</th>
+                            <th>Weight</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1</th>
+                            <th>cup</th>
+                            <th>rice</th>
+                            <th>702 kcal</th>
+                            <th>195 g</th>
+                        </tr>
+                        <tr>
+                            <th>10</th>
+                            <th>ounce</th>
+                            <th>chickpeas</th>
+                            <th>1071.6 kcal</th>
+                            <th>283.5 g</th>
+                        </tr>
+                    </tbody>
+                </table>
                 <div class="totalCalories-circle">
                     <svg viewBox='0 0 32 32'>
                         <g stroke-width='5'>
@@ -28,7 +55,7 @@
                 <div class="Calories-precente my-5">
                     <p class="m-0 text-end">Daily: 2000 CAL</p>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" attr.style="width: {{precentageCalories + 5 }}% " attr.aria-valuenow="{{precentageCalories}}" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" role="progressbar" attr.title="{{precentageCalories}}" attr.style="width: {{precentageCalories}}% " attr.aria-valuenow="{{precentageCalories}}" aria-valuemin="0" aria-valuemax="100">
                             {{precentageCalories}}%</div>
                     </div>
 
@@ -88,124 +115,103 @@
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                         <div class="accordion-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">title</th>
-                                        <th scope="col">g</th>
-                                        <th scope="col">%</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            calories
-                                        </td>
-                                        <td>
-                                            {{nutrition.calories}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {{nutrition.totalNutrients.FAT.label}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalNutrients.FAT.quantity}} {{nutrition.totalNutrients.FAT.unit}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalDaily.FAT.quantity}} {{nutrition.totalDaily.FAT.unit}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {{nutrition.totalNutrients.CHOLE.label}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalNutrients.CHOLE.quantity}} {{nutrition.totalNutrients.CHOLE.unit}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalDaily.CHOLE.quantity}} {{nutrition.totalDaily.CHOLE.unit}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {{nutrition.totalNutrients.NA.label}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalNutrients.NA.quantity}} {{nutrition.totalNutrients.NA.unit}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalDaily.NA.quantity}} {{nutrition.totalDaily.NA.unit}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {{nutrition.totalNutrients.FIBTG.label}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalNutrients.FIBTG.quantity}} {{nutrition.totalNutrients.FIBTG.unit}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalDaily.FIBTG.quantity}} {{nutrition.totalDaily.FIBTG.unit}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {{nutrition.totalNutrients.SUGAR.label}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalNutrients.SUGAR.quantity}} {{nutrition.totalNutrients.SUGAR.unit}}
-                                        </td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {{nutrition.totalNutrients.PROCNT.label}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalNutrients.PROCNT.quantity}} {{nutrition.totalNutrients.PROCNT.unit}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalDaily.PROCNT.quantity}} {{nutrition.totalDaily.PROCNT.unit}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {{nutrition.totalNutrients.CA.label}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalNutrients.CA.quantity}} {{nutrition.totalNutrients.CA.unit}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalDaily.CA.quantity}} {{nutrition.totalDaily.CA.unit}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {{nutrition.totalNutrients.FE.label}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalNutrients.FE.quantity}} {{nutrition.totalNutrients.FE.unit}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalDaily.FE.quantity}} {{nutrition.totalDaily.FE.unit}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            {{nutrition.totalNutrients.K.label}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalNutrients.K.quantity}} {{nutrition.totalNutrients.K.unit}}
-                                        </td>
-                                        <td>
-                                            {{nutrition.totalDaily.K.quantity}} {{nutrition.totalDaily.K.unit}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p>Calories</p>
+                                <p>{{nutrition.totalNutrientsKCal.ENERC_KCAL.quantity | number:'1.0-0' }}</p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p>Total Fat </p>
+                                <p> {{(nutrition.totalNutrients.FAT.quantity*10 | number:'1.0-0') /10 }} {{nutrition.totalNutrients.FAT.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.FAT.quantity | number:'1.0-0' }} {{nutrition.totalDaily.FAT.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Saturated Fat </p>
+                                <p> {{(nutrition.totalNutrients.FASAT.quantity*10 | number:'1.0-0') /10 }} {{nutrition.totalNutrients.FASAT.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.FASAT.quantity | number:'1.0-0' }} {{nutrition.totalDaily.FASAT.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Cholesterol </p>
+                                <p> {{(nutrition.totalNutrients.CHOLE.quantity*10 | number:'1.0-0') /10 }} {{nutrition.totalNutrients.CHOLE.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.CHOLE.quantity | number:'1.0-0' }} {{nutrition.totalDaily.CHOLE.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Sodium </p>
+                                <p> {{((nutrition.totalNutrients.NA.quantity*10 ) | number:'1.0-0') /10 }} {{nutrition.totalNutrients.NA.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.NA.quantity | number:'1.0-0' }} {{nutrition.totalDaily.NA.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Total Carbohydrate </p>
+                                <p> {{(nutrition.totalNutrients.CHOCDF.quantity * 10) / 10 }} {{nutrition.totalNutrients.CHOCDF.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.CHOCDF.quantity | number:'1.0-0' }} {{nutrition.totalDaily.CHOCDF.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Dietary Fiber </p>
+                                <p> {{(nutrition.totalNutrients.FIBTG.quantity * 10 | number:'1.0-0') / 10 }} {{nutrition.totalNutrients.FIBTG.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.FIBTG.quantity | number:'1.0-0' }} {{nutrition.totalDaily.FIBTG.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Total Sugars </p>
+                                <p> {{(nutrition.totalNutrients.SUGAR.quantity * 10 | number:'1.0-0') / 10 }} {{nutrition.totalNutrients.SUGAR.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Protein </p>
+                                <p> {{(nutrition.totalNutrients.PROCNT.quantity * 10 | number:'1.0-0') / 10 }} {{nutrition.totalNutrients.PROCNT.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.PROCNT.quantity | number:'1.0-0' }} {{nutrition.totalDaily.PROCNT.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Vitamin </p>
+                                <p> {{(nutrition.totalNutrients.VITD.quantity * 10) / 10 }} {{nutrition.totalNutrients.VITD.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.VITD.quantity | number:'1.0-0' }} {{nutrition.totalDaily.VITD.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Calcium </p>
+                                <p> {{(nutrition.totalNutrients.CA.quantity * 10) / 10 }} {{nutrition.totalNutrients.CA.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.CA.quantity | number:'1.0-0' }} {{nutrition.totalDaily.CA.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Iron </p>
+                                <p> {{(nutrition.totalNutrients.FE.quantity * 10 | number:'1.0-0') / 10 }} {{nutrition.totalNutrients.FE.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.FE.quantity | number:'1.0-0' }} {{nutrition.totalDaily.FE.unit}}
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                                <p> Potassium </p>
+                                <p> {{(nutrition.totalNutrients.K.quantity * 10) / 10 }} {{nutrition.totalNutrients.K.unit}}
+                                </p>
+                                <p>
+                                    {{nutrition.totalDaily.K.quantity | number:'1.0-0' }} {{nutrition.totalDaily.K.unit}}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

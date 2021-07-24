@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
@@ -8,28 +8,51 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class DataService {
-  baseUrl: string = "https://api.edamam.com/api/nutrition-data";
-  url: string;
-  app_key: string = "0a656c4ce26fa0e44e88bd55f109d995";
-  app_id: string = "83c03dd4";
+  public dataRes: any[];
+  public baseUrl: string = "https://api.edamam.com/api";
+  public app_key: string = "0a656c4ce26fa0e44e88bd55f109d995";
+  public app_id: string = "83c03dd4";
+  public url: string = this.baseUrl + '/nutrition-details?app_id=' + this.app_id + '&app_key=' + this.app_key;
+  public httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    })
+  };
 
-  results: any[] = [];
+
+
 
   constructor(private http: HttpClient, public router: Router) { }
 
-  getRecipeData(userSearch: string): Observable<any> {
-    this.url = `https://api.edamam.com/api/nutrition-data?app_id=83c03dd4&app_key=0a656c4ce26fa0e44e88bd55f109d995&nutrition-type=cooking&ingr=${userSearch}`;
 
-    return this.http.get<any>(this.url)
-      .pipe(
-        catchError((err) => {
-          console.log('Connection Error: 401');
-          console.log('Error caught in service');
-          console.error(err);
-          this.router.navigateByUrl("/error-page");
-          return throwError(err);    //Rethrow it back to component
-        })
-      )
+  // get all data from API
+  getAll(data): Observable<any> {
+    return this.http.get(this.url + data);
+  }
+  // get data based on id
+  get(id): Observable<any> {
+    return this.http.get(`${this.url}/${id}`);
+  }
+  // get data by post method 
+  getPost(data): Observable<any> {
+    return this.http.post(this.url, data, this.httpOptions);
+  }
+  // update data 
+  update(id, data): Observable<any> {
+    return this.http.put(`${this.url}/${id}`, data);
+  }
+  // delete data 
+  delete(id): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  // delete all data
+  deleteAll(): Observable<any> {
+    return this.http.delete(this.url);
+  }
+  // find by title inside data
+  findByTitle(title): Observable<any> {
+    return this.http.get(`${this.url}?title=${title}`);
   }
 
 
